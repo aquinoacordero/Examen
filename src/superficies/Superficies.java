@@ -7,12 +7,20 @@ import java.util.Scanner;
  *
  * @author damian
  */
+
 public class Superficies {
 
     /**
      * @param args the command line arguments
      */
+    
     static Modelo mod = new Modelo();
+    
+    /**
+     * 
+     * @see parte principal del programa que realiza las tareas logicas
+     * 
+     */
 
     public static void main(String[] args) {
 
@@ -41,17 +49,16 @@ public class Superficies {
             //add area calculations for triangle here
             vis.Triangulo(mod);
 
-            mod.setTriangleArea(0.5*mod.getBaseLength()*mod.getHeight());
-            System.out.println("Your triangles area is: " + triangleArea);
+            mod.setTriangleArea((float)(0.5*mod.getBaseLength()*mod.getHeight()));
+            vis.impr(mod.getTriangleArea());
 
         }
         if (mod.getShapeType().equalsIgnoreCase("circle")) {
             //add area calculations for a circle here
             vis.Circulo(mod);
 
-            circleArea = radius * radius;
-            circleArea = (float) (3.14159265 * circleArea);
-            System.out.println("Your Circles area is " + circleArea);
+            mod.setCircleArea((float)(3.141592*mod.getRadius()*mod.getRadius()));
+            vis.impr(mod.getCircleArea());
 
         }
 
